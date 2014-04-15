@@ -10,6 +10,7 @@ func main() {
     stdin := os.Stdin
     if len(os.Args) > 1 {
         file, err := os.Open(os.Args[1])
+        defer file.Close()
         if err != nil {
             log.Fatal(err)
         } else {
